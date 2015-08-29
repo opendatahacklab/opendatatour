@@ -1,0 +1,474 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY org "http://www.w3.org/ns/org#" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY locn "http://www.w3.org/ns/locn#" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY odt "http://www.dmi.unict.it/~longo/opendatatour/" >
+    <!ENTITY event "http://purl.org/NET/c4dm/event.owl#" >
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY cct "http://www.comune.catania.it/comunect.owl/" >
+    <!ENTITY sioc "http://rdfs.org/sioc/ns#" >
+]>
+
+
+<rdf:RDF xml:base="&odt;"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:org="http://www.w3.org/ns/org#"
+     xmlns:locn="http://www.w3.org/ns/locn#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:event="http://purl.org/NET/c4dm/event.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:sioc	="&sioc;">
+     
+    <owl:Ontology rdf:about="http://www.dmi.unict.it/~longo/opendatatour">
+	<owl:versionInfo>0.7</owl:versionInfo>
+	<owl:imports rdf:resource="http://motools.sf.net/event/event.n3" />
+        <owl:imports rdf:resource="http://www.w3.org/ns/locn"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/org"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+	<owl:imports rdf:resource="http://www.w3.org/2006/time" />
+	<owl:imports rdf:resource="http://rdfs.org/sioc/ns" />
+    </owl:Ontology>
+
+	<!-- additional semantics -->
+	<rdf:Description rdf:about="&org;hasSite">
+		<rdfs:subPropertyOf rdf:resource="&locn;location"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="&org;siteAddress">
+		<rdfs:subPropertyOf rdf:resource="&locn;address"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="&event;place">
+		<rdfs:subPropertyOf rdf:resource="&locn;location"/>
+	</rdf:Description>
+
+    <!-- at first me -->
+	<foaf:Person rdf:about="http://www.dmi.unict.it/~longo/me">
+		<rdfs:label>Cristiano Longo</rdfs:label>
+		<foaf:name>Cristiano Longo</foaf:name>
+		<foaf:givenname>Cristiano</foaf:givenname>
+		<foaf:family_name>Longo</foaf:family_name>
+		<foaf:mbox rdf:resource="mailto:longo@dmi.unict.it"/>
+		<foaf:mbox rdf:resource="mailto:cristianolongo@gmail.com" />
+	</foaf:Person>
+
+
+	<!-- locations of tour events or association sites -->
+	<locn:Location rdf:about="&cct;via_grotte_bianche112">
+		<locn:address>
+			<locn:Address rdf:about="&cct;via_grotte_bianche112_address">
+				<rdfs:label>112, Via Grotte Bianche, Catania, Italy</rdfs:label>
+				<locn:fullAddress>112, Via Grotte Bianche, Catania, Italy</locn:fullAddress>
+				<locn:thoroughfare>Via Grotte Bianche</locn:thoroughfare>
+				<locn:locatorDesignator>112</locn:locatorDesignator>
+				<locn:postName>Catania</locn:postName>
+				<locn:adminUnitL1>IT</locn:adminUnitL1>
+			</locn:Address>
+		</locn:address>
+		<locn:geometry>
+			<locn:Geometry rdf:about="&cct;via_grotte_bianche112_geometry">
+				<geo:lat>37.513287</geo:lat>
+				<geo:long>15.088008</geo:long>
+			</locn:Geometry>
+		</locn:geometry>
+	</locn:Location>
+
+	<locn:Location rdf:about="&cct;via_pietro_antonio_coppola6">
+		<locn:address>
+			<locn:Address rdf:about="&cct;via_pietro_antonio-coppola6_address">
+				<rdfs:label>6, Via Pietro Antonio Coppola, Catania, Italy</rdfs:label>
+				<locn:fullAddress>6, Via Pietro Antonio Coppola, Catania, Italy</locn:fullAddress>
+				<locn:thoroughfare>Via Pietro Antonio Coppola</locn:thoroughfare>
+				<locn:locatorDesignator>6</locn:locatorDesignator>
+				<locn:postName>Catania</locn:postName>
+				<locn:adminUnitL1>IT</locn:adminUnitL1>
+			</locn:Address>
+		</locn:address>
+		<locn:geometry>
+			<locn:Geometry rdf:about="&cct;via_pietro_antonio-coppola6_geometry">
+				<geo:lat>37.50754</geo:lat>
+				<geo:long>15.085101</geo:long>
+			</locn:Geometry>
+		</locn:geometry>
+	</locn:Location>
+
+	<locn:Location rdf:about="&cct;via_novara59">
+		<locn:address>
+			<locn:Address rdf:about="&cct;via_novara59_address">
+				<rdfs:label>59, Via Novara, Catania, Italy</rdfs:label>
+				<locn:fullAddress>59, Via Novara, Catania, Italy</locn:fullAddress>
+				<locn:thoroughfare>Via Novara</locn:thoroughfare>
+				<locn:locatorDesignator>59</locn:locatorDesignator>
+				<locn:postName>Catania</locn:postName>
+				<locn:adminUnitL1>IT</locn:adminUnitL1>
+			</locn:Address>
+		</locn:address>
+		<locn:geometry>
+			<locn:Geometry rdf:about="&cct;via_novara59_geometry">
+				<geo:lat>37.522488</geo:lat>
+				<geo:long>15.084804</geo:long>
+			</locn:Geometry>
+		</locn:geometry>
+	</locn:Location>
+
+	<locn:Location rdf:about="&cct;largo_monsignor_oscar_romero">
+		<locn:address>
+			<locn:Address rdf:about="&cct;largo_monsignor_oscar_romero_address">
+				<rdfs:label>Largo Monsignor Oscar Romero, Catania, Italy</rdfs:label>
+				<locn:fullAddress>Largo Monsignor Oscar Romero, Catania, Italy</locn:fullAddress>
+				<locn:thoroughfare>Largo Monsignor Oscar Romero</locn:thoroughfare>
+				<locn:postName>Catania</locn:postName>
+				<locn:adminUnitL1>IT</locn:adminUnitL1>
+			</locn:Address>
+		</locn:address>
+		<locn:geometry>
+			<locn:Geometry rdf:about="&cct;largo_monsignor_oscar_romero_geometry">
+				<!-- TODO -->
+				<geo:lat>37.522526</geo:lat>
+				<geo:long>15.09018</geo:long>
+			</locn:Geometry>
+		</locn:geometry>
+	</locn:Location>
+
+	<locn:Location rdf:about="&cct;via_gargano37">
+		<locn:address>
+			<locn:Address rdf:about="&cct;via_gargano37_address">
+				<rdfs:label>37, Via Gargano, Catania, Italy</rdfs:label>
+				<locn:fullAddress>37 Via Gargano, Catania, Italy</locn:fullAddress>
+				<locn:thoroughfare>Via Gargano</locn:thoroughfare>
+				<locn:locatorDesignator>37</locn:locatorDesignator>
+				<locn:postName>Catania</locn:postName>
+				<locn:adminUnitL1>IT</locn:adminUnitL1>
+			</locn:Address>
+		</locn:address>
+		<locn:geometry>
+			<locn:Geometry rdf:about="&cct;via_gargano37_geometry">
+				<geo:lat>37.511723</geo:lat>
+				<geo:long>15.097029</geo:long>
+			</locn:Geometry>
+		</locn:geometry>
+	</locn:Location>
+
+	<locn:Location rdf:about="&cct;via_cifali20">
+		<locn:address>
+			<locn:Address rdf:about="&cct;via_cifali20_address">
+				<rdfs:label>20, Via Cifali, Catania, Italy</rdfs:label>
+				<locn:fullAddress>20, Via Cifali, Catania, Italy</locn:fullAddress>
+				<locn:thoroughfare>Via Cifali</locn:thoroughfare>
+				<locn:locatorDesignator>20</locn:locatorDesignator>
+				<locn:postName>Catania</locn:postName>
+				<locn:adminUnitL1>IT</locn:adminUnitL1>
+			</locn:Address>
+		</locn:address>
+		<locn:geometry>
+			<locn:Geometry rdf:about="&cct;via_cifali20_geometry">
+				<geo:lat>37.513203</geo:lat>
+				<geo:long>15.076021</geo:long>
+			</locn:Geometry>
+		</locn:geometry>
+	</locn:Location>
+
+	<locn:Location rdf:about="&cct;via_san_gaetano_alla_grotta_14">
+		<locn:address>
+			<locn:Address rdf:about="&cct;via_san_gaetano_alla_grotta_14">
+				<rdfs:label>14, Via San Gaetano alla grotta, Catania, Italy</rdfs:label>
+				<locn:fullAddress>14, Via San Gaetano alla grotta, Catania, Italy</locn:fullAddress>
+				<locn:thoroughfare>Via San Gaetano alla grotta</locn:thoroughfare>
+				<locn:locatorDesignator>14</locn:locatorDesignator>
+				<locn:postName>Catania</locn:postName>
+				<locn:adminUnitL1>IT</locn:adminUnitL1>
+			</locn:Address>
+		</locn:address>
+		<locn:geometry>
+			<locn:Geometry rdf:about="&cct;via_san_gaetano_alla_grotta_14">
+				<geo:lat>37.50868</geo:lat>
+				<geo:long>15.086676</geo:long>
+			</locn:Geometry>
+		</locn:geometry>
+	</locn:Location>
+
+	<!-- organizations -->
+	<org:Organization rdf:about="http://hackspacecatania.it/me">
+		<rdfs:label>HACKSPACE Catania</rdfs:label>
+		<foaf:name>HACKSPACE Catania</foaf:name>
+		<foaf:logo rdf:resource="http://www.dmi.unict.it/~longo/okoa2015/logos/hackspace.png" />
+		<foaf:homepage rdf:resource="http://hackspacecatania.it/" />
+		<org:hasPrimarySite rdf:resource="&cct;via_grotte_bianche112" />
+	</org:Organization>
+	
+	<org:Organization rdf:about="http://www.officinarebelde.org/me">
+		<rdfs:label>Officina Rebelde</rdfs:label>
+		<foaf:name>Officina Rebelde</foaf:name>
+		<foaf:logo rdf:resource="http://www.officinarebelde.org/local/cache-vignettes/L120xH115/arton16-fa99c.jpg" />
+		<foaf:homepage rdf:resource="http://www.officinarebelde.org/" />
+		<org:hasPrimarySite rdf:resource="&cct;via_pietro_antonio_coppola6" />
+	</org:Organization>
+	
+	<org:Organization rdf:about="http://www.cittainsieme.it/me">
+		<rdfs:label>Citt&#224; Insieme</rdfs:label>
+		<foaf:name>Citt&#224; Insieme</foaf:name>
+		<foaf:logo rdf:resource="http://www.newsicilia.it/wp-content/uploads/2014/10/citta-insieme-581x600.jpg" />
+		<foaf:homepage rdf:resource="http://www.cittainsieme.it" />
+		<org:hasPrimarySite rdf:resource="&cct;largo_monsignor_oscar_romero" />
+	</org:Organization>
+
+	<org:Organization rdf:about="http://www.youthub.net/me">
+		<rdfs:label>Youth Hub Catania</rdfs:label>
+		<foaf:name>Youth Hub Catania</foaf:name>
+		<foaf:logo rdf:resource="http://www.postazioneavanzata.com/wp-content/uploads/2013/04/Youthub-Catania-lincubatore-startup-gestito-da-studenti-universitari.jpg" />
+		<foaf:homepage rdf:resource="http://www.youthub.net" />
+		<foaf:mbox rdf:resource="info@youthub.net" />
+		<org:hasPrimarySite rdf:resource="&cct;via_novara59" />
+	</org:Organization>
+
+	<org:Organization rdf:about="citta_futura">
+		<rdfs:label>Circolo Citt&#224; Futura</rdfs:label>
+		<foaf:name>Circolo Citt&#224; Futura</foaf:name>
+		<foaf:logo rdf:resource="http://3.bp.blogspot.com/-ifHO-v501f8/UnyukP3cJQI/AAAAAAAAEF4/RlqPR77olxI/s1600/logo%2Bcitt%25C3%25A0%2Bfutura.jpg" />
+		<org:hasPrimarySite rdf:resource="&cct;via_gargano37" />
+	</org:Organization>
+
+	<org:Organization rdf:about="http://www.fablabcatania.eu/me">
+		<rdfs:label>FABLAB Catania</rdfs:label>
+		<foaf:name>FABLAB Catania</foaf:name>
+		<foaf:logo rdf:resource="logos/logo_fablab.png" />
+		<foaf:homepage rdf:resource="http://www.fablabcatania.eu" />
+		<foaf:mbox rdf:resource="mailto://info@fablabcatania.eu" />
+		<org:hasPrimarySite rdf:resource="&cct;via_cifali20" />
+	</org:Organization>
+
+	<org:Organization rdf:about="http://simplemachines.it/me">
+		<rdfs:label>Simple Machines</rdfs:label>
+		<foaf:name>Simple Machines</foaf:name>
+		<foaf:logo rdf:resource="https://avatars3.githubusercontent.com/u/3924451?v=3&amp;s=200" />
+		<foaf:homepage rdf:resource="http://simplemachines.it" />
+		<foaf:mbox rdf:resource="mailto://dev@simplemachines.it" />
+		<foaf:phone rdf:resource="tel:+39-095-7315865" />
+		<org:hasSite rdf:resource="&cct;via_san_gaetano_alla_grotta_14" />
+	</org:Organization>
+
+	<!-- post containers -->
+	<sioc:Container rdf:about="http://opendatasicilia.it/#me" />
+		
+	<!-- then tour events -->
+
+	<event:Event rdf:about="stage1">
+		<rdfs:label>Open Data Tour - 24 Febbraio 2015 presso HACKSPACE Catania</rdfs:label>
+		<foaf:logo rdf:resource="logos/stage1.png" />
+		<event:agent rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<event:agent rdf:resource="http://hackspacecatania.it/me" />
+		<event:place rdf:resource="&cct;via_grotte_bianche112" />
+		<event:time>
+			<time:Interval rdf:about="stage1time">
+				<time:hasBeginning>
+					<time:Instant rdf:about="time201502242000">
+						<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-02-24T20:00:00+01:00</time:inXSDDateTime>
+					</time:Instant>
+				</time:hasBeginning>
+			</time:Interval>
+		</event:time>
+	</event:Event>	
+
+	<sioc:Post rdf:about="http://opendatasicilia.it/2015/03/02/inizia-lopen-data-tour-prima-tappa-hackspace/">
+		<dc:title>Inizia l’Open Data Tour – prima tappa Hackspace</dc:title>
+		<rdfs:label>Inizia l’Open Data Tour – prima tappa Hackspace</rdfs:label>
+		<sioc:has_container rdf:resource="http://opendatasicilia.it/me"/>
+		<sioc:has_creator rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<sioc:about rdf:resource="stage1" />
+		<sioc:topic rdfs:label="Blogs" rdf:resource="http://opendatasicilia.it/opendatatour/me"/>
+	</sioc:Post>
+	
+	<event:Event rdf:about="stage2">
+		<rdfs:label>Open Data Tour - 2 Marzo 2015 presso Citt&#224; Insieme</rdfs:label>
+		<foaf:logo rdf:resource="logos/stage3.jpg" />
+		<event:agent rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<event:agent rdf:resource="http://www.cittainsieme.it/me" />
+		<event:place rdf:resource="&cct;largo_monsignor_oscar_romero" />
+		<event:time>
+			<time:Interval rdf:about="stage3time">
+				<time:hasBeginning>
+					<time:Instant rdf:about="time201503022000">
+						<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-03-02T20:00:00+01:00</time:inXSDDateTime>
+					</time:Instant>
+				</time:hasBeginning>
+			</time:Interval>
+		</event:time>
+	</event:Event>	
+
+	<sioc:Post rdf:about="http://opendatasicilia.it/2015/03/02/seconda-tappa-dellopen-data-tour/">
+		<dc:title>Seconda Tappa dell’Open Data Tour – Citt&#224;Insieme</dc:title>
+		<rdfs:label>Seconda Tappa dell’Open Data Tour – Citt&#224;Insieme</rdfs:label>
+		<sioc:has_container rdf:resource="http://opendatasicilia.it/me"/>
+		<sioc:has_creator rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<sioc:about rdf:resource="stage2" />
+		<sioc:topic rdfs:label="Blogs" rdf:resource="http://opendatasicilia.it/opendatatour/me"/>
+	</sioc:Post>
+
+	<event:Event rdf:about="stage3">
+		<rdfs:label>Open Data Tour - 4 Marzo 2015 presso Officina Rebelde</rdfs:label>
+		<foaf:logo rdf:resource="logos/stage2.jpg" />
+		<event:agent rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<event:agent rdf:resource="http://www.officinarebelde.org/me" />
+		<event:place rdf:resource="&cct;via_pietro_antonio_coppola6" />
+		<event:time>
+			<time:Interval rdf:about="stage2time">
+				<time:hasBeginning>
+					<time:Instant rdf:about="time201503041830">
+						<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-03-04T18:30:00+01:00</time:inXSDDateTime>
+					</time:Instant>
+				</time:hasBeginning>
+			</time:Interval>
+		</event:time>
+	</event:Event>	
+
+	<sioc:Post rdf:about="http://opendatasicilia.it/2015/03/05/terza-tappa-dellopen-data-tour-officina-rebelde/">
+		<dc:title>Terza Tappa dell’Open Data Tour – Officina Rebelde</dc:title>
+		<rdfs:label>Terza Tappa dell’Open Data Tour – Officina Rebelde</rdfs:label>
+		<sioc:has_container rdf:resource="http://opendatasicilia.it/me"/>
+		<sioc:has_creator rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<sioc:about rdf:resource="stage3" />
+		<sioc:topic rdfs:label="Blogs" rdf:resource="http://opendatasicilia.it/opendatatour/me"/>
+	</sioc:Post>
+
+	<event:Event rdf:about="stage4">
+		<rdfs:label>Open Data Tour - 16 Marzo 2015 presso Youth Hub Catania</rdfs:label>
+		<foaf:logo rdf:resource="logos/stage4.jpg" />
+		<event:agent rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<event:agent rdf:resource="http://www.youthub.net/me" />
+		<event:place rdf:resource="&cct;via_novara59" />
+		<foaf:depiction rdf:resource="pics/stage4/1.jpg" />
+		<event:time>
+			<time:Interval rdf:about="stage4time">
+				<time:hasBeginning>
+					<time:Instant rdf:about="time201503161900">
+						<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-03-16T19:00:00+01:00</time:inXSDDateTime>
+					</time:Instant>
+				</time:hasBeginning>
+			</time:Interval>
+		</event:time>
+	</event:Event>	
+
+	<sioc:Post rdf:about="http://opendatasicilia.it/2015/03/18/quarta-tappa-dellopen-data-tour-youthub/">
+		<dc:title>Quarta Tappa dell’Open Data Tour – YoutHub</dc:title>
+		<rdfs:label>Quarta Tappa dell’Open Data Tour – YoutHub</rdfs:label>
+		<sioc:has_container rdf:resource="http://opendatasicilia.it/me"/>
+		<sioc:has_creator rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<sioc:about rdf:resource="stage4" />
+		<sioc:topic rdfs:label="Blogs" rdf:resource="http://opendatasicilia.it/opendatatour/me"/>
+	</sioc:Post>
+	
+	<event:Event rdf:about="stage5">
+		<rdfs:label>Open Data Tour - 2 Aprile 2015 presso Citt&#224; Futura</rdfs:label>
+		<foaf:logo rdf:resource="logos/stage5.jpg" />
+		<event:agent rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<event:agent rdf:resource="citta_futura" />
+		<event:place rdf:resource="&cct;via_gargano37" />
+		<foaf:depiction rdf:resource="pics/stage5/1.jpg" />
+		<foaf:depiction rdf:resource="pics/stage5/2.jpg" />
+		<foaf:depiction rdf:resource="pics/stage5/3.jpg" />
+		<foaf:depiction rdf:resource="pics/stage5/4.jpg" />
+		<event:time>
+			<time:Interval rdf:about="stage5time">
+				<time:hasBeginning>
+					<time:Instant rdf:about="time201504022000">
+						<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-04-02T20:30:00+01:00</time:inXSDDateTime>
+					</time:Instant>
+				</time:hasBeginning>
+			</time:Interval>
+		</event:time>
+	</event:Event>	
+
+	<sioc:Post rdf:about="http://opendatasicilia.it/2015/04/03/quinta-tappa-dellopen-data-tour-citta-futura/">
+		<dc:title>Quinta Tappa dell’Open Data Tour – Citt&#224; Futura</dc:title>
+		<rdfs:label>Quinta Tappa dell’Open Data Tour – Citt&#224; Futura</rdfs:label>
+		<sioc:has_container rdf:resource="http://opendatasicilia.it/me"/>
+		<sioc:has_creator rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<sioc:about rdf:resource="stage5" />
+		<sioc:topic rdfs:label="Blogs" rdf:resource="http://opendatasicilia.it/opendatatour/me"/>
+	</sioc:Post>
+
+	<event:Event rdf:about="stage6">
+		<rdfs:label>Open Data Tour - 21 Aprile 2015 presso FABLAB Catania</rdfs:label>
+		<foaf:logo rdf:resource="logos/stage6.png" />
+		<event:agent rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<event:agent rdf:resource="http://www.fablabcatania.eu/me" />
+		<event:place rdf:resource="&cct;via_cifali20" />
+		<foaf:depiction rdf:resource="pics/stage6/1.jpg" />
+		<foaf:depiction rdf:resource="pics/stage6/2.jpg" />
+		<foaf:depiction rdf:resource="pics/stage6/3.jpg" />
+		<event:time>
+			<time:Interval rdf:about="stage6time">
+				<time:hasBeginning>
+					<time:Instant rdf:about="time2015042121900">
+						<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-04-21T19:00:00+02:00</time:inXSDDateTime>
+					</time:Instant>
+				</time:hasBeginning>
+			</time:Interval>
+		</event:time>
+	</event:Event>	
+
+	<sioc:Post rdf:about="http://opendatasicilia.it/2015/04/16/invito-allopen-data-tour/">
+		<dc:title>Invito all’Open Data Tour</dc:title>
+		<rdfs:label>Invito all’Open Data Tour</rdfs:label>
+		<sioc:has_container rdf:resource="http://opendatasicilia.it/me"/>
+		<sioc:has_creator rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<sioc:about rdf:resource="stage6" />
+		<sioc:topic rdfs:label="Blogs" rdf:resource="http://opendatasicilia.it/opendatatour/me"/>
+	</sioc:Post>
+
+	<sioc:Post rdf:about="https://www.facebook.com/events/1599506463639904/">
+		<dc:title>//Open Data Tour// @FABLAB Catania</dc:title>
+		<rdfs:label>//Open Data Tour// @FABLAB Catania</rdfs:label>
+		<sioc:has_container rdf:resource="http://facebook.com/me" />
+		<sioc:about rdf:resource="stage6" />
+		<sioc:topic rdf:resource="http://opendatasicilia.it/opendatatour/me"/>
+	</sioc:Post>
+	
+	<sioc:Post rdf:about="http://catania.blogsicilia.it/open-data-in-sicilia-domani-seminario-a-catania/294136/">
+		<dc:title>Open Data in Sicilia - Domani seminario a Catania</dc:title>
+		<rdfs:label>Open Data in Sicilia - Domani seminario a Catania</rdfs:label>
+		<sioc:has_container rdf:resource="http://catania.blogsicilia.it/me" />
+		<sioc:about rdf:resource="stage6" />
+		<sioc:topic rdf:resource="http://opendatasicilia.it/opendatatour/me"/>
+	</sioc:Post>
+
+	<sioc:Post rdf:about="http://opendatasicilia.it/2015/04/25/sesta-tappa-dellopen-data-tour-fablab-catania/">
+		<dc:title>Sesta Tappa dell’Open Data Tour – FABLAB Catania</dc:title>
+		<rdfs:label>Sesta Tappa dell’Open Data Tour – FABLAB Catania</rdfs:label>
+		<sioc:has_container rdf:resource="http://opendatasicilia.it/me" />
+		<sioc:about rdf:resource="stage6" />
+		<sioc:topic rdf:resource="http://opendatasicilia.it/opendatatour/me"/>
+	</sioc:Post>
+	
+		<event:Event rdf:about="stage7">
+		<rdfs:label>Open Data Tour - 20 Maggio 2015 presso SimpleMachines</rdfs:label>
+		<foaf:logo rdf:resource="logos/stage7.png" />
+		<event:agent rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<event:agent rdf:resource="http://www.simplemachines.eu/me" />
+		<event:place rdf:resource="&cct;via_san_gaetano_alla_grotta_14" />
+		<event:time>
+			<time:Interval rdf:about="stage7time">
+				<time:hasBeginning>
+					<time:Instant rdf:about="time201505201830">
+						<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-20T18:30:00+02:00</time:inXSDDateTime>
+					</time:Instant>
+				</time:hasBeginning>
+			</time:Interval>
+		</event:time>
+	</event:Event>	
+
+</rdf:RDF>
