@@ -34,13 +34,13 @@
      xmlns:sioc	="&sioc;">
      
     <owl:Ontology rdf:about="http://www.dmi.unict.it/~longo/opendatatour">
-	<owl:versionInfo>0.7</owl:versionInfo>
-	<owl:imports rdf:resource="http://motools.sf.net/event/event.n3" />
+		<owl:versionInfo>0.8</owl:versionInfo>
+		<owl:imports rdf:resource="http://motools.sf.net/event/event.n3" />
         <owl:imports rdf:resource="http://www.w3.org/ns/locn"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/org"/>
         <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
-	<owl:imports rdf:resource="http://www.w3.org/2006/time" />
-	<owl:imports rdf:resource="http://rdfs.org/sioc/ns" />
+		<owl:imports rdf:resource="http://www.w3.org/2006/time" />
+		<owl:imports rdf:resource="http://rdfs.org/sioc/ns" />
     </owl:Ontology>
 
 	<!-- additional semantics -->
@@ -184,7 +184,7 @@
 
 	<locn:Location rdf:about="&cct;via_san_gaetano_alla_grotta_14">
 		<locn:address>
-			<locn:Address rdf:about="&cct;via_san_gaetano_alla_grotta_14">
+			<locn:Address rdf:about="&cct;via_san_gaetano_alla_grotta_14_address">
 				<rdfs:label>14, Via San Gaetano alla grotta, Catania, Italy</rdfs:label>
 				<locn:fullAddress>14, Via San Gaetano alla grotta, Catania, Italy</locn:fullAddress>
 				<locn:thoroughfare>Via San Gaetano alla grotta</locn:thoroughfare>
@@ -194,9 +194,28 @@
 			</locn:Address>
 		</locn:address>
 		<locn:geometry>
-			<locn:Geometry rdf:about="&cct;via_san_gaetano_alla_grotta_14">
+			<locn:Geometry rdf:about="&cct;via_san_gaetano_alla_grotta_14_geometry">
 				<geo:lat>37.50868</geo:lat>
 				<geo:long>15.086676</geo:long>
+			</locn:Geometry>
+		</locn:geometry>
+	</locn:Location>
+
+	<locn:Location rdf:about="&cct;via_crociferi38">
+		<locn:address>
+			<locn:Address rdf:about="&cct;via_crociferi38_address">
+				<rdfs:label>38, Via Crociferi, Catania, Italy</rdfs:label>
+				<locn:fullAddress>38, Via Crociferi, Catania, Italy</locn:fullAddress>
+				<locn:thoroughfare>Via Crociferi</locn:thoroughfare>
+				<locn:locatorDesignator>38</locn:locatorDesignator>
+				<locn:postName>Catania</locn:postName>
+				<locn:adminUnitL1>IT</locn:adminUnitL1>
+			</locn:Address>
+		</locn:address>
+		<locn:geometry>
+			<locn:Geometry rdf:about="&cct;via_crociferi38_geometry">
+				<geo:lat>37.504646</geo:lat>
+				<geo:long>15.08491</geo:long>
 			</locn:Geometry>
 		</locn:geometry>
 	</locn:Location>
@@ -259,6 +278,14 @@
 		<foaf:mbox rdf:resource="mailto://dev@simplemachines.it" />
 		<foaf:phone rdf:resource="tel:+39-095-7315865" />
 		<org:hasSite rdf:resource="&cct;via_san_gaetano_alla_grotta_14" />
+	</org:Organization>
+
+	<org:Organization rdf:about="http://cope.it/me">
+		<rdfs:label>Co.Pe. Collaborazione Paesi Emergenti</rdfs:label>
+		<foaf:name>Co.Pe. Collaborazione Paesi Emergenti</foaf:name>
+		<!-- TODO foaf:logo rdf:resource="https://avatars3.githubusercontent.com/u/3924451?v=3&amp;s=200" /-->
+		<foaf:homepage rdf:resource="http://cope.it" />
+		<org:hasSite rdf:resource="&cct;via_crociferi38" />
 	</org:Organization>
 
 	<!-- post containers -->
@@ -454,7 +481,7 @@
 		<sioc:topic rdf:resource="http://opendatasicilia.it/opendatatour/me"/>
 	</sioc:Post>
 	
-		<event:Event rdf:about="stage7">
+	<event:Event rdf:about="stage7">
 		<rdfs:label>Open Data Tour - 20 Maggio 2015 presso SimpleMachines</rdfs:label>
 		<foaf:logo rdf:resource="logos/stage7.png" />
 		<event:agent rdf:resource="http://www.dmi.unict.it/~longo/me" />
@@ -465,6 +492,23 @@
 				<time:hasBeginning>
 					<time:Instant rdf:about="time201505201830">
 						<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-20T18:30:00+02:00</time:inXSDDateTime>
+					</time:Instant>
+				</time:hasBeginning>
+			</time:Interval>
+		</event:time>
+	</event:Event>	
+
+	<event:Event rdf:about="stage8">
+		<rdfs:label>Open Data Tour - 31 Agosto 2015 presso Co.Pe.</rdfs:label>
+		<!-- TODO foaf:logo rdf:resource="logos/stage8.png" / -->
+		<event:agent rdf:resource="http://www.dmi.unict.it/~longo/me" />
+		<event:agent rdf:resource="http://cope.it/me" />
+		<event:place rdf:resource="&cct;via_crociferi38" />
+		<event:time>
+			<time:Interval rdf:about="stage8time">
+				<time:hasBeginning>
+					<time:Instant rdf:about="time201508311200">
+						<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-08-31T12:00:00+02:00</time:inXSDDateTime>
 					</time:Instant>
 				</time:hasBeginning>
 			</time:Interval>
