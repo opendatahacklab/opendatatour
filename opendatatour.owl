@@ -34,7 +34,7 @@
      xmlns:sioc	="&sioc;">
      
     <owl:Ontology rdf:about="http://www.dmi.unict.it/~longo/opendatatour">
-		<owl:versionInfo>0.8</owl:versionInfo>
+		<owl:versionInfo>0.9</owl:versionInfo>
 		<owl:imports rdf:resource="http://motools.sf.net/event/event.n3" />
         <owl:imports rdf:resource="http://www.w3.org/ns/locn"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/org"/>
@@ -283,7 +283,7 @@
 	<org:Organization rdf:about="http://cope.it/me">
 		<rdfs:label>Co.Pe. Collaborazione Paesi Emergenti</rdfs:label>
 		<foaf:name>Co.Pe. Collaborazione Paesi Emergenti</foaf:name>
-		<!-- TODO foaf:logo rdf:resource="https://avatars3.githubusercontent.com/u/3924451?v=3&amp;s=200" /-->
+		<foaf:logo rdf:resource="http://cope.it/wp-content/uploads/2014/04/COPE.jpg" />
 		<foaf:homepage rdf:resource="http://cope.it" />
 		<org:hasSite rdf:resource="&cct;via_crociferi38" />
 	</org:Organization>
@@ -500,7 +500,7 @@
 
 	<event:Event rdf:about="stage8">
 		<rdfs:label>Open Data Tour - 31 Agosto 2015 presso Co.Pe.</rdfs:label>
-		<!-- TODO foaf:logo rdf:resource="logos/stage8.png" / -->
+		<foaf:logo rdf:resource="logos/stage8.png" />
 		<event:agent rdf:resource="http://www.dmi.unict.it/~longo/me" />
 		<event:agent rdf:resource="http://cope.it/me" />
 		<event:place rdf:resource="&cct;via_crociferi38" />
@@ -514,5 +514,13 @@
 			</time:Interval>
 		</event:time>
 	</event:Event>	
+
+	<sioc:Post rdf:about="http://opendatasicilia.it/2015/09/01/ottava-tappa-dellopen-data-tour-co-p-e/">
+		<dc:title>Ottava Tappa dell’Open Data Tour – CO.P.E</dc:title>
+		<rdfs:label>Ottava Tappa dell’Open Data Tour – CO.P.E</rdfs:label>
+		<sioc:has_container rdf:resource="http://opendatasicilia.it/me" />
+		<sioc:about rdf:resource="stage8" />
+		<sioc:topic rdf:resource="http://opendatasicilia.it/opendatatour/me"/>
+	</sioc:Post>
 
 </rdf:RDF>
